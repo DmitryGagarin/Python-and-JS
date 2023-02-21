@@ -1,6 +1,3 @@
-#F = G * m1 * m2 / R^2
-#TODO сделать чтобы циферки сами рисовались
-#TODO Красивый вывод циферов (без е)
 
 import math
 
@@ -16,12 +13,13 @@ def lines():
     print("_____________________________________")
     
 def showList():
+    space(1)
     for i in listOfPlanets:
         print(i)
 
 def choosingPlanet():
     print ("")
-    print("Choose a planet (satellite/star) by inputing a number from 1 to 8")
+    print("Choose a planet (satellite/star) by inputing a number from 1 to 9")
     num = int(input())
     correctNum = 0
     
@@ -37,37 +35,49 @@ def choosingPlanet():
             print("")
     
             def counting():
+                massAndRadious = {
+                    "1" : [190350000000, 3.285 * math.pow(10,23)],
+                    "2" : [212010000000, 4.867 * math.pow(10,24)],
+                    "3" : [158790000000, 6.39 * math.pow(10,23)],
+                    "4" : [849940000000, 1.898 * math.pow(10,27)],
+                    "5" : [1.6153 * math.pow(10,12), 5.683 * math.pow(10,26)],
+                    "6" : [2.9768 * math.pow(10,12), 8.681 * math.pow(10,25)],
+                    "7" : [4.6088 * math.pow(10,12), 1.02 * math.pow(10,26)],
+                    "8" : [384400000, 7.348 * math.pow(10,22)],
+                    "9" : [1.4792 * math.pow(10,11), 1.989 * math.pow(10,30)],
+                }
+                
                 if num == 1:
-                    radious = 190350000000
-                    secondMass = 3.285 * math.pow(10,23)
+                    radious = massAndRadious["1"][0]
+                    secondMass = massAndRadious["1"][1]
                 if num == 2:
-                    radious = 212010000000
-                    secondMass = 4.867 * math.pow(10,24)
+                    radious = massAndRadious["2"][0]
+                    secondMass = massAndRadious["2"][1]
                 if num == 3:
-                    radious = 158790000000
-                    secondMass = 6.39 * math.pow(10,23)
+                    radious = massAndRadious["3"][0]
+                    secondMass = massAndRadious["3"][1]
                 if num == 4:
-                    radious = 849940000000
-                    secondMass = 1.898 * math.pow(10,27)
+                    radious = massAndRadious["4"][0]
+                    secondMass = massAndRadious["4"][1]
                 if num == 5:
-                    radious = 1.6153 * math.pow(10,12)
-                    secondMass = 5.683 * math.pow(10,26)
+                    radious = massAndRadious["5"][0]
+                    secondMass = massAndRadious["5"][1]
                 if num == 6:
-                    radious = 2.9768 * math.pow(10,12)
-                    secondMass = 8.681 * math.pow(10,25)
+                    radious = massAndRadious["6"][0]
+                    secondMass = massAndRadious["6"][1]
                 if num == 7:
-                    radious = 4.6088 * math.pow(10,12)
-                    secondMass = 1.02 * math.pow(10,26)
+                    radious = massAndRadious["7"][0]
+                    secondMass = massAndRadious["7"][1]
                 if num == 8:
-                    radious = 384400000
-                    secondMass = 7.348 * math.pow(10,22)
+                    radious = massAndRadious["8"][0]
+                    secondMass = massAndRadious["8"][1]
                 if num == 9:
-                    radious = 1.4792 * math.pow(10,11)
-                    secondMass = 1.989 * math.pow(10,30)
-    
+                    radious = massAndRadious["9"][0]
+                    secondMass = massAndRadious["9"][1]
+
                 force = str(((g * earthMass *  secondMass) / math.pow(radious,2)))
 
-                print ("Force of gravity between the Earth and " + myPlanet + " equals: " + force)
+                print ("Force of gravity between the Earth and " + myPlanet + " equals: " + force + " N")
         
         counting()
     
