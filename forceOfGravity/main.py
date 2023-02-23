@@ -20,17 +20,17 @@ def showList():
 def choosingPlanet():
     print ("")
     print("Choose a planet (satellite/star) by inputing a number from 1 to 9")
-    num = int(input())
+    num = str(input())
     correctNum = 0
     
     while correctNum <= 0:
-        if (num < 1 or num > len(listOfPlanets)):
+        if (int(num) < 1 or int(num) > len(listOfPlanets)):
             print("Input correct number!")
             choosingPlanet()
             break
         else:
             correctNum += 1
-            myPlanet = listOfPlanets[num-1]
+            myPlanet = listOfPlanets[int(num)-1]
             print("You chose: " + myPlanet)
             print("")
     
@@ -47,34 +47,9 @@ def choosingPlanet():
                     "9" : [1.4792 * math.pow(10,11), 1.989 * math.pow(10,30)],
                 }
                 
-                if num == 1:
-                    radious = massAndRadious["1"][0]
-                    secondMass = massAndRadious["1"][1]
-                if num == 2:
-                    radious = massAndRadious["2"][0]
-                    secondMass = massAndRadious["2"][1]
-                if num == 3:
-                    radious = massAndRadious["3"][0]
-                    secondMass = massAndRadious["3"][1]
-                if num == 4:
-                    radious = massAndRadious["4"][0]
-                    secondMass = massAndRadious["4"][1]
-                if num == 5:
-                    radious = massAndRadious["5"][0]
-                    secondMass = massAndRadious["5"][1]
-                if num == 6:
-                    radious = massAndRadious["6"][0]
-                    secondMass = massAndRadious["6"][1]
-                if num == 7:
-                    radious = massAndRadious["7"][0]
-                    secondMass = massAndRadious["7"][1]
-                if num == 8:
-                    radious = massAndRadious["8"][0]
-                    secondMass = massAndRadious["8"][1]
-                if num == 9:
-                    radious = massAndRadious["9"][0]
-                    secondMass = massAndRadious["9"][1]
-
+                radious = massAndRadious[num][0]
+                secondMass = massAndRadious[num][1]
+                
                 force = str(((g * earthMass *  secondMass) / math.pow(radious,2)))
 
                 print ("Force of gravity between the Earth and " + myPlanet + " equals: " + force + " N")
