@@ -22,6 +22,7 @@ for i in range(len(text)):
     else:
         newText += (text[i].lower())
         j += 1
+
 print(newText)
 
 
