@@ -6,10 +6,6 @@
 # используйте библиотеку requests
 # для поиска статей можно искать в html тексте страницы ссылки по подстроке “<a href=\"/wiki” и далее брать из ссылки title
 
-# TODO: make normal deleting
-# TODO: make links by these strings
-# TODO: make a loop for a deleting trash
-# TODO: make a condition for an inserting month
 
 import calendar # to transform number of month to its name
 import random
@@ -19,11 +15,13 @@ from bs4 import *
 import urllib.parse
 import requests
 
+print("ЕСЛИ ВЫЛЕЗАЕТ КРАСНАЯ ОШИБКА, ВВЕДИТЕ ДРУГУЮ ДАТУ ПОТОМ, ХЗ КАК ЭТО ФИКСИТЬ :)")
+
 language = "Russian"
 
-year = int(input("Insert year when you were born"))
+year = int(input("Insert the year when you were born"))
 year = str(year)
-month = int(input("Insert number of month when you were born"))
+month = int(input("Insert number of the month when you were born"))
 monthString = calendar.month_name[month]
 
 translator = Translator()
@@ -58,24 +56,20 @@ def season_events(number_of_month, number_of_year):
     for i in nameOfArticle:
         nameOfArticle.remove(i)
 
-    unnecessary_values = [nameOfArticle[0],nameOfArticle[1], nameOfArticle[2], nameOfArticle[3], nameOfArticle[4], nameOfArticle[5],
-                          nameOfArticle[6],nameOfArticle[10],nameOfArticle[14],nameOfArticle[18],nameOfArticle[22],nameOfArticle[26],
-                          nameOfArticle[7],nameOfArticle[11],nameOfArticle[15],nameOfArticle[19],nameOfArticle[23],nameOfArticle[27],
-                          nameOfArticle[8],nameOfArticle[12],nameOfArticle[16],nameOfArticle[20],nameOfArticle[24],nameOfArticle[28],
-                          nameOfArticle[9],nameOfArticle[13],nameOfArticle[17],nameOfArticle[21],nameOfArticle[25],nameOfArticle[29],
-                          nameOfArticle[30],nameOfArticle[34],nameOfArticle[38],nameOfArticle[42],nameOfArticle[46],nameOfArticle[49],
-                          nameOfArticle[31],nameOfArticle[35],nameOfArticle[39],nameOfArticle[43],nameOfArticle[47],nameOfArticle[50],
-                          nameOfArticle[32],nameOfArticle[36],nameOfArticle[40],nameOfArticle[44],nameOfArticle[48],nameOfArticle[51],
-                          nameOfArticle[33],nameOfArticle[37],nameOfArticle[41],nameOfArticle[45],nameOfArticle[52],nameOfArticle[53],
-                          nameOfArticle[54],nameOfArticle[55]]
-
-    for value in unnecessary_values:
-        nameOfArticle.remove(value)
-
+    # sorting of list by its symbols and words to get only names of articles
     finalList = []
-    for i in range (1,6):
-        index = random.randint(1,30)
-        finalList.append(nameOfArticle[index])
+    number = 0
+    while number < 5:
+        index = random.randint(1,len(nameOfArticle))
+        if nameOfArticle[index].__contains__("Категория") or nameOfArticle[index].__contains__("Category") or nameOfArticle[index].__contains__("Категоризация" or
+            nameOfArticle[index].__contains__("Скачать") or nameOfArticle[index].__contains__("j") or nameOfArticle[index].__contains__("i") or nameOfArticle[index].__contains__("t") or
+            nameOfArticle[index].__contains__("h") or nameOfArticle[index].__contains__("r") or nameOfArticle[index].__contains__("v") or nameOfArticle[index].__contains__("Править") or
+            nameOfArticle[index].__contains__("فوریه") or nameOfArticle[index].__contains__("[g]")):
+            nameOfArticle.remove(nameOfArticle[index])
+        else:
+            finalList.append(nameOfArticle[index])
+            nameOfArticle.remove(nameOfArticle[index])
+            number += 1
 
     for line in finalList:
         file.write(line + "\n")
