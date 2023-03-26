@@ -8,12 +8,12 @@ Methods:
 /2. stack.pop() - remove from the top/
 /3. stack.empty() - check if stack is empty  (True or False)/
 /4. stack.pick() - shows the top item (don’t remove it)/
-/5. stack.search(argument) - shows number of item from the top (top item equals 1). If item wont be  found it ll show -1;/
+/5. stack.search(argument) - shows number of item from the top (top item equals 1). If item wont be found it show -1;/
 
 
 
 *Queue -  line of people* - FIFO data structure (First-in First-out)
-There’s a head and a tail. Head is the first item; tail is the latests item
+There’s a head and a tail. Head is the first item; tail is the last item
 
 Implementing a queue:
 Queue extends Collections, so we need to create a LinkedList or PriorityQueue 
@@ -25,7 +25,7 @@ Methods:
 /3. queue.peek() - picks the first (the head) item (not removing it)/
 /4. queue.isEmpty() - checks if the queue is empty or not (True or False)/
 /5. queue.size() - checks size (number of items in it)/
-/6. queue.contains(argument) - check does the queue contains any of argument items (True or False)/
+/6. queue.contains(argument) - check does the queue contain any of argument items (True or False)/
 
 
 
