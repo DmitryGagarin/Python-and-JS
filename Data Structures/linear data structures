@@ -1,0 +1,90 @@
+*Stacks - vertical tower* - LIFO data structure (last-in first-out)
+
+Implementing a stack:
+### Stack<TYPE> stack = new Stack<TYPE>()
+
+Methods:
+/1. stack.push() - add to the top/ 
+/2. stack.pop() - remove from the top/
+/3. stack.empty() - check if stack is empty  (True or False)/
+/4. stack.pick() - shows the top item (don’t remove it)/
+/5. stack.search(argument) - shows number of item from the top (top item equals 1). If item wont be  found it ll show -1;/
+
+
+
+*Queue -  line of people* - FIFO data structure (First-in First-out)
+There’s a head and a tail. Head is the first item; tail is the latests item
+
+Implementing a queue:
+Queue extends Collections, so we need to create a LinkedList or PriorityQueue 
+### Queue<TYPE> queue = new LinkedList<>()
+
+Methods:
+/1. queue.offer() - add (enqueue) to the end/
+/2. queue.pull() - remove (dequeue) from the head (doesn’t throw any exceptions)/
+/3. queue.peek() - picks the first (the head) item (not removing it)/
+/4. queue.isEmpty() - checks if the queue is empty or not (True or False)/
+/5. queue.size() - checks size (number of items in it)/
+/6. queue.contains(argument) - check does the queue contains any of argument items (True or False)/
+
+
+
+*PriorityQueue - line of people with different priorities* - FIFO data structure (First-in First-out) BUT higher priority elements serve before lower priority elements (puts items in order)
+
+Implementing a priorityQueue:
+Queue extends Collections, so we need to create a PriorityQueue 
+### Queue<TYPE> queue = new PriorityQueue<>()
+Numbers(Doubles) - in assigning order (smallest element at the head)
+Strings(Chars) - in alphabetical order (from A to Z) 
+
+### Queue<TYPE> queue = new PriorityQueue<>(Collections.reverseOrder()) 
+Numbers(Doubles) - in descendant order (biggest element at the head)
+Strings(Chars) - in reversal alphabetical order (from Z to A) 
+
+Methods:
+/1. queue.offer() - add (enqueue) to the end/
+/2. queue.pull() - remove (dequeue) from the head (doesn’t throw any exceptions)/
+/3. queue.peek() - picks the first (the head) item (not removing it)/
+/4. queue.isEmpty() - checks if the queue is empty or not (True or False)/
+/5. queue.size() - checks size (number of items in it)/
+/6. queue.contains(argument) - check does the queue contains any of 
+argument items (True or False)/
+
+
+
+*LinkedList -  data is connected with address*
+
+Singly
+https://gist.github.com/vinkla/dca76249ba6b73c5dd66a4e986df4c8d?permalink_comment_id=4515880#gistcomment-4515880
+
+Doubly
+https://gist.github.com/vinkla/dca76249ba6b73c5dd66a4e986df4c8d?permalink_comment_id=4515883#gistcomment-4515883
+
+Implementing a LinkedList:
+### LinkedList<TYPE> linkedList = new LinkedList<TYPE>()
+
+Methods:
+> Head = First
+> Tail = Last 
+> We can treat with linkedLists as with queues, priorityQueues, Stacks, or any of Collections
+
+/1. LinkedList.add(number of previous objects, «what we want to insert») - adds an object between to objects/ 
+/2. LinkedList.indexOf(«object which index we need to know») - shows an index of object we want/
+/3. LinkedList.peekFirst() - shows the first item of list/
+/4. LinkedList.peekLast() - shows the last item of list/
+/5. LinkedList.addFirst() - adding to the beginning of the list/
+/6. LinkedList.addLast() - adding to the end of the list/
+/7. LinkedList.removeFirst() - removing the first item of the list/
+/8. LinkedList.removeLast() - removing the last item of the list/
+
+
+
+*DynamicArray = ArrayList* 
+
+Implementing an ArrayList:
+### ArrayList<TYPE> arrayList = new ArrayList<TYPE>()
+
+> Also we can create our own dynamicArray with capacity that we want - to do it we create a special class and building and object[capacity]   
+> If we create new DynamicArray we initialize it by another way
+### 
+DynamicArray dynamicArray = new DynamicArray(«insert here capacity we want»);
