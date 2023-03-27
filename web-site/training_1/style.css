@@ -1,5 +1,99 @@
-body{
-    background-color: white;
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 20px;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+ul{
+    list-style: none;
+}
+
+.navbar{
+    display: flex;
+    justify-content: space-around;
+    align-items:center;
+    height: 18vh;
+    background-color: rgb(203, 203, 203);
+}
+
+.logo{
+    padding-left: 1em;
+    padding-top: 1em ;
+}
+
+.logo-text{
+    font-size: 1.5em;
+}
+
+.menubar{
+    width: 55%;
+    margin-left: 1em; 
+    padding-top: 1em;
+}
+
+.list{
+    display: flex;
+    justify-content: space-between;
+}
+
+.list-items{
+    color: black;
+    font-family: sans-serif;
+    font-size: 0.9em;
+}
+
+.list-items a:hover{
+    color: black;
+}
+    
+.cart{
+    padding-left: 2em;
+    position: relative;
+    padding-top: 1em ;
+}
+
+.cart .number-of-items{
+    display: flex;
+    cursor: pointer;    
+    justify-content: center;
+    align-items: center;
+    color: white;
+    position: absolute;
+    left: 20px;
+    top: 1px;
+    background-color: #f09d51;
+    height: 20px;
+    width: 20px;
+    border-radius: 7px;
+}
+
+.number-of-items .noi{
+    font-size: 0.7em;
+}
+
+.fa-shopping-cart{
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+.burger{
+    height: 28px;
+    width: 32px;
+    display: none;
+}
+
+.layer1, .layer2, .layer3{
+    background-color: black;
+    height: 4px;
+    margin-top: 4px;
+    width: 100%;
+    border-radius: 10px;
 }
 
 .fa-book{
@@ -10,3 +104,4 @@ body{
     color: #f09d51;
     font-size: 1.1 em;
 }
+
