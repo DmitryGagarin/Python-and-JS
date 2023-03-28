@@ -14,7 +14,7 @@ const cartContent = document.querySelector(".cart-content ")
 let Cart = [];
 let ButtonsDOM = [];
 
-cart.addEventListener("Click", function(){
+cart.addEventListener("click", function(){
     cartSideBar.style.transform = "translate(0%)"
     const bodyOverlay = document.createElement("div")
     bodyOverlay.classList.add("overlay")
@@ -23,7 +23,7 @@ cart.addEventListener("Click", function(){
     },300)
 })
 
-closeCart.addEventListener("Click", function(){
+closeCart.addEventListener("click", function(){
     cartSideBar.style.transform = "translate(100%)" 
     const bodyOverlay = document.querySelector(".overlay")
     document.querySelector("body").removeChild(bodyOverlay)
