@@ -1,0 +1,67 @@
+{
+	"items": [{
+			"sys": {
+				"id": 1
+			},
+			"fields": {
+				"title": "1984",
+				"price": 15.00,
+				"image": {
+					"fields": {
+						"file": {
+							"url": "/training_1/photos/1984.jpeg"
+						}
+					}
+				}
+			}
+		},
+		{
+			"sys": {
+				"id": 2
+			},
+			"fields": {
+				"title": "Animal Farm",
+				"price": 13.00,
+				"image": {
+					"fields": {
+						"file": {
+							"url": "/training_1/photos/animal_farm.jpeg"
+						}
+					}
+				}
+			}
+		},
+		{
+			"sys": {
+				"id": 3
+			},
+			"fields": {
+				"title": "Little Prince",
+				"price": 18.00,
+				"image": {
+					"fields": {
+						"file": {
+							"url": "/training_1/photos/little_prince.jpeg"
+						}
+					}
+				}
+			}
+		},
+		{
+			"sys": {
+				"id": 4
+			},
+			"fields": {
+				"title": "Brave New World",
+				"price": 15.00,
+				"image": {
+					"fields": {
+						"file": {
+							"url": "/training_1/photos/brave_new_world.jpeg"
+						}
+					}
+				}
+			}
+		}
+	]
+}

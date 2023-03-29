@@ -1,7 +1,7 @@
-const cart = document.querySelector("nav .cart")
+const openCart = document.querySelector("nav .cart")
 const cartSideBar = document.querySelector(".cart-sidebar")
 const closeCart = document.querySelector(".close-cart")
-const burger = document.querySelector(".burger")
+const openMenu = document.querySelector(".burger")
 const menuSideBar = document.querySelector(".menu-sidebar")
 const closeMenu = document.querySelector(".close-menu")
 const cartItemsTotal = document.querySelector(".noi")
@@ -14,29 +14,34 @@ const cartContent = document.querySelector(".cart-content ")
 let Cart = [];
 let ButtonsDOM = [];
 
-cart.addEventListener("click", function(){
+//event of opening cart menu
+openCart.addEventListener("click", function(){
     cartSideBar.style.transform = "translate(0%)"
     const bodyOverlay = document.createElement("div")
-    bodyOverlay.classList.add("overlay")
+    bodyOverlay.classList.add("overlay");
     setTimeout(function(){
         document.querySelector("body").append(bodyOverlay)
     },300)
 })
 
+//event of closing cart menu
 closeCart.addEventListener("click", function(){
     cartSideBar.style.transform = "translate(100%)" 
     const bodyOverlay = document.querySelector(".overlay")
     document.querySelector("body").removeChild(bodyOverlay)
 })
 
-burger.addEventListener("click", function(){
+//event of opening menu for small devices
+openMenu.addEventListener("click", function(){
     menuSideBar.style.transform = "translate(0%)"
 })
 
+//event of closing menu for small devices
 closeMenu.addEventListener("click", function(){
     menuSideBar.style.transform = "translate(-100%)"
 })
 
+//transfer products from json to js
 class Product{
     async getProduct(){
         const response = await fetch("products.json")
@@ -52,21 +57,22 @@ class Product{
     }
 }
 
+//class of showing elements in a list  
 class UI{
     displayProducts(products){
         let result = "";
-        products.forEach(product =>  {
+        products.forEach(product=>  {
             const productDiv = document.createElement("div")
-            productDiv.innerHTML = `<div class="product-cart"> 
+            productDiv.innerHTML = `<div class = "product-card"> 
             <img src = "${product.image}" alt="product">
-            <span class = "add-to-cart" data-is="${product.id}">
+            <span class = "add-to-cart" data-id="${product.id}">
             <i class="fa fa-cart--plus fa-1x"
             style = "margin-right:0.1em; font-size = 1em;"></i>
             Add to Cart </span>
-            <div class="product-name"> ${product.titel}></div>
-            <div class="product-pricing">${product.price}></div>
+            <div class = "product-name"> ${product.title}></div>
+            <div class = "product-pricing">${product.price}></div>
             </div>`
-        const p = document.querySelector(".prosuct")
+        const p = document.querySelector(".product")
         p.append(productDiv) 
         })
     }
@@ -74,19 +80,19 @@ class UI{
     getButtons(){
         const btns = document.querySelectorAll(".add-to-cart")
         Array.from(btns)
-        buttonsDOM = btns 
+        buttonsDOM = btns  
         btns.forEach((btn) => {
             let id = btn.dataset.id
-            let inCart = Cart.find((item) => {item.id == id});
+            let inCart = Cart.find((item)=>{item.id === id});
             if(inCart){
                 btn.innerHTML = "In Cart"
                 btn.dissabled = true
             }
-            btn.addEventListener("clicl", (e) =>{
+            btn.addEventListener("click", (e)=>{
                 e.currentTarget.innerHTML = "In Cart"
                 e.currentTarget.style.color = "white"
                 e.currentTarget.style.pointerEvents = "none"    
-                let cartItem = {...Storage.getStorageProducts(id), 'amount':1} //change price to amount 
+                let cartItem = {...Storage.getStorageProducts(id), 'amount':1}
                 Cart.push(cartItem)
                 Storage.saveCart(Cart)
                 this.setCartValues(Cart)
@@ -94,41 +100,42 @@ class UI{
             })
         })
     }
-    setCartValues(Cart){
+    setCartValues(cart){
         let tempTotal = 0;
         let itemsTotal = 0;
-        Cart.map((item) => {
-            tempTotal += (item.price * item.amount)
+        Cart.map((item)=> {
+            tempTotal += (item.price*item.amount)
             itemsTotal += item.amount
             parseFloat(tempTotal.toFixed(2))
         })
-    cartItemsTotal.innerHTML = itemsTotal
-    cartPriceTotal.innerHTML = parseFloat(tempTotal.toFixed(2))
+        cartItemsTotal.innerHTML = itemsTotal
+        cartPriceTotal.innerHTML = parseFloat(tempTotal.toFixed(2))
     }
 
     addCartItem(cartItem){
         let cartItemUI = document.createElement("div")
-        cartItemUi.innerHTML = `<div class="cart-product>
-                                <div class="product-image>
-                                <i src = "${cartItem.image} alt = "product"> </div>
-                                <div class="cart-product-content">
-                                <div class= "cart-product-name"> <h3> ${cartItem.title} </h3> </div>
-                                <div class= "cart-product-price> <h3> ${cartItem.price} </h3></div>
-                                <div class = " cart-product-remove data-id= "${cartItem.id}"
+        cartItemUI.innerHTML = `<div class = "cart-product">
+                                <div class = "product-image">
+                                <img src = "${cartItem.image}" alt = "product"> </div>
+                                <div class = "cart-product-content">
+                                <div class = "cart-product-name"> <h3> ${cartItem.title} </h3> </div>
+                                <div class = "cart-product-price> <h3> ${cartItem.price} </h3></div>
+                                <div class = "cart-product-remove" data-id = "${cartItem.id}"
                                 href = "#" style = "color:red;> remove </a> </div>
-                                <div class="plus-minus">
-                                <i class ="fa fa-angle-left add-amount" data-id = "${cartItem.id}">
-                                <span class="no-of-items"> ${cartItem.amount} </span>
-                                data-id = "${cartItem.id}" <i></i>
+                                <div class = "plus-minus">
+                                <i class = "fa fa-angle-left add-amount" 
+                                data-id = "${cartItem.id}"> </i>
+                                <span class = "no-of-items"> ${cartItem.amount} </span>
+                                data-id = "${cartItem.id}" </i>
                                 </div> 
                                 </div>`
-                                cartContent.append(cartItemUi)
+                                cartContent.append(cartItemUI)
     
     }
     setupApp(){
         Cart = Storage.getCart()
         this.setCartValues(Cart)
-        cart.map((item) => {
+        Cart.map((item) => {
             this.addCartItem(item)
         })
     }
@@ -229,7 +236,7 @@ class UI{
     }
     getSingleButton(id){
         let btn
-        buttonDOM.forEach((button)=>{
+        ButtonsDOM.forEach((button)=>{
             if(button.dataset.id === id){
                 btn = button
             }
