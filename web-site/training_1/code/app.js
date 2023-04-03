@@ -6,9 +6,9 @@ const menuSideBar = document.querySelector(".menu-sidebar")
 const closeMenu = document.querySelector(".close-menu")
 const cartItemsTotal = document.querySelector(".noi")
 const cartPriceTotal = document.querySelector(".total-amount")
-const cartUi = document.querySelector(".cart-sidebar .cart")
+const cartUI = document.querySelector(".cart-sidebar .cart")
 const totalDiv = document.querySelector(".total-sum")
-const clearBtn= document.querySelector(".clear-cart-btn")
+const clearBtn = document.querySelector(".clear-cart-btn")
 const cartContent = document.querySelector(".cart-content ")
 
 let Cart = [];
@@ -60,16 +60,16 @@ class Product{
 //class of showing elements in a list  
 class UI{
     displayProducts(products){
-        products.forEach(product=>  {
+        products.forEach(product =>  {
             const productDiv = document.createElement("div")
             productDiv.innerHTML = 
             `<div class = "product-card"> 
                 <img src = "${product.image}" alt="product">
-                <span class = "add-to-cart" data-id=${product.id}>
+                <span class = "add-to-cart" data-id="${product.id}">
                 <i class="fa fa-cart--plus fa-1x" style = "margin-right:0.1em; font-size = 1em;"></i>
                 Add to Cart </span>
-                <div class = "product-name"> ${product.title} </div>
-                <div class = "product-pricing"> ${product.price} </div>
+                <div class = "product-name"> "${product.title}" </div>
+                <div class = "product-pricing"> ${product.price} $ </div>
             </div>`
         const p = document.querySelector(".product")
         p.append(productDiv) 
@@ -82,7 +82,7 @@ class UI{
         ButtonsDOM = btns  
         btns.forEach((btn) => {
             let id = btn.dataset.id
-            let inCart = Cart.find((item)=>{item.id === id});
+            let inCart = Cart.find((item) => item.id === id);
             if(inCart){
                 btn.innerHTML = "In Cart"
                 btn.dissabled = true
@@ -99,11 +99,12 @@ class UI{
             })
         })
     }
+
     setCartValues(Cart){
         let tempTotal = 0;
         let itemsTotal = 0;
-        Cart.map((item)=> {
-            tempTotal += (item.amount*item.price);
+        Cart.map((item) => {
+            tempTotal += (item.price*item.amount);
             itemsTotal += item.amount;
             parseFloat(tempTotal.toFixed(2))
         })
@@ -119,18 +120,17 @@ class UI{
                                 <div class = "cart-product-content">
                                 <div class = "cart-product-name"> <h3> ${cartItem.title} </h3> </div>
                                 <div class = "cart-product-price> <h3> ${cartItem.price} </h3></div>
-                                <div class = "cart-product-remove" data-id = "${cartItem.id}"
+                                <div class = "cart-product-remove" data-id = "$${cartItem.id}"
                                 href = "#" style = "color:red;> remove </a> </div>
                                 <div class = "plus-minus">
                                 <i class = "fa fa-angle-left add-amount" 
                                 data-id = "${cartItem.id}"> </i>
                                 <span class = "no-of-items"> ${cartItem.amount} </span>
-                                data-id = "${cartItem.id}" </i>
                                 </div> 
                                 </div>`
                                 cartContent.append(cartItemUI)
-    
     }
+
     setupApp(){
         Cart = Storage.getCart()
         this.setCartValues(Cart)
@@ -138,6 +138,7 @@ class UI{
             this.addCartItem(item)
         })
     }
+
     cartLogic(){
         clearBtn.addEventListener("click", ()=> {
             this.closeCart()
@@ -145,7 +146,7 @@ class UI{
     cartContent.addEventListener("click",(event)=>{
         if(event.target.classList.contains("cart-product-remove")){
             let id = event.target.dataset.id
-            this.removeItem(id)
+            this.removeItem(id) 
             let div = event.target.parentElement.parentElement.parentElement.parentElement
             div.removeChild(event.target.parentElement.parentElement.parentElement.parentElement)
         }
