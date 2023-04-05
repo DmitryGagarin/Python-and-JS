@@ -2,10 +2,10 @@ This task consists of 3 stages:
 1) Training 1 - just a code from somebody's video. Crucial for first experience. None line code was written myself, it was just an attempt.
 There's only frontend, no backend at all. Used HTML, CSS, JS, JSON
 
-2) Training 2 - partly the same idea as previous, by the realization of code is a work of mine. There's a small part of backend such as 
+2) Training 2 - partly the same idea as previous, by the realization of code is a work of mine. Tried some framework features. There's a small part of backend such as 
 registration, login, etc
 
-3) Training 3 - i decided to take my relative minecraft server website and recreate it, upgrade the design, some add modern feature and code
-fully working backend 
+3) Training 3 - i decided to take minecraft server website and recreate it, upgrade the design, add some modern feature and code
+fully working backend. All frontend is written with the use of react framework
 
 P.S. Wish me a luck!
