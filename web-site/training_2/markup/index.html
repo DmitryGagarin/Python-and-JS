@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/web-site/training_2/styles/style.css">
     <link href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css" rel="stylesheet">
     <title>Document</title>
 </head>
@@ -39,16 +39,13 @@
             <div class="sidebar-content">
                 <ul class="lists">
                     <li class="list">
-                        <a href="#" class="nav-link">
+                        <a class="nav-link">
                             <div class="login-menu-sidebar">
-                                <span class="login-window"> Login </span>
-                                <form>
-                                    <label for="fname" id="username-text">Username</label><br>
-                                    <input type="text" id="username" name="username"><br>
-                                    <label for="lname" id="password-text">Password</label><br>
-                                    <input type="password" id="password" name="lname"> <br>
-                                    <input type="submit" id="submit-text" value="Submit">
-                                </form>
+                                <h3 class="login-text"> Login Menu </h3>
+                                <input class="login-username" type="text" placeholder="Username"> 
+                                <input class="login-password" type="password" placeholder="Password"> 
+                                <button class="login-button"> Login </button>
+                                <button class="login-close"> Close </button>
                             </div>
                         </a>
                     </li>
@@ -60,32 +57,46 @@
     <div class="main">
         
         <div class="section-1">
-            <ul class="buttons">
+            <ul class="buttons-1">
                 <li class="buttons-sec1-list"><a> Spot Wallet </a></li>
                 <li class="buttons-sec1-list"><a> Fundings </a></li>
                 <li class="buttons-sec1-list"><a> Margin </a></li>
                 <li class="buttons-sec1-list"><a> Earn </a></li>
                 <button class="buttons-sec1-list-deposit"><a> Deposit </a></button>
             </ul>
-            <div class="choose-section">
+            <div class="sections-sec1">
                 <div class="section-token"><a> Token </a></div>
                 <div class="section-amount"><a> Amount </a></div>
                 <div class="section-total"><a> Total Value </a></div>
                 <div class="section-profit"><a> Profit </a></div>
             </div>
-            <div class="info-lines">
-                <div class="info-line-1"><a> BDK 0.05 $900 +21% </a></div>
-                <div class="info-line-2"><a> OUG 0.03 $300 +32% </a></div>
-                <div class="info-line-3"><a> XFZ 0.08 $657 +30% </a></div>
-                <div class="info-line-4"><a> EFDS 0.02 $732 +12% </a></div>
+            <div class="info-lines-1">
+                <div class="info-line-1-1"><a> BDK 0.05 $900 +21% </a></div>
+                <div class="info-line-2-1"><a> OUG 0.03 $300 +32% </a></div>
+                <div class="info-line-3-1"><a> XFZ 0.08 $657 +30% </a></div>
+                <div class="info-line-4-1"><a> EFDS 0.02 $732 +12% </a></div>
             </div>
         </div>
         
         <div class="section-2">
-            <ul class="buttons">
+            <ul class="buttons-2">
                 <li class="buttons-sec2-list"> <a> Incomes </a></li>
                 <li class="buttons-sec2-list"> <a> Outcomes </a></li>
+                <button class="button-sec2-seemore"> <a> See more </a></button>
             </ul>
+            <div class="sections-sec2"> 
+                <div class="section-token"><a> Token </a></div>
+                <div class="section-amount"><a> Status </a></div>
+                <div class="section-total"><a> Date </a></div>
+                <div class="section-profit"><a> Amount </a></div>
+            </div>
+            <div class="info-lines-2">
+                <div class="info-line-1-2"><a> BDK In Progress 2022-07-27 150$ </a></div>
+                <div class="info-line-2-2"><a> BDK Successful  2023-02-14 200$ </a></div>
+                <div class="info-line-3-2"><a> EFDS Successful 2023-01-13 90$ </a></div>
+                <div class="info-line-4-2"><a> XFZ Failed 2022-12-30 146$ </a></div>
+            </div>
+
         </div>
         
         <div class="section-3">
@@ -108,7 +119,7 @@
         </div>
     </div>
 
-    <script src="app.js"></script>
+    <script src="/web-site/training_2/code/app.js"></script>
 
 </body>
 </html>

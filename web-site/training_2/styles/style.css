@@ -71,8 +71,22 @@ li{
     cursor: pointer;
 }
 
+.login a{
+    text-decoration: none;
+    color: white;
+}
+
+.registration{
+    cursor: pointer;
+}
+
+.registration a{
+    text-decoration: none;
+    color: white;
+}
+
 /* setting of sidebar */
-nav .sidebar{
+.sidebar{
     position: fixed;
     top: 0;
     right: -100%;    
@@ -95,33 +109,33 @@ nav.open .sidebar {
     padding: 30px 16px;
 }
 
-.sidebar-content .list {
-    list-style: none;
+/* design of sidebar */
+.login-text{
+    transform: translateX(10%);
+    text-decoration: none;
 }
-  
-.nav-link .link {
-    font-size: 16px;
-    color: #707070;
-    font-weight: 400;
+ .login-username{
+    width: 17em;
+    height: 2em;
+ }
+
+ .login-password{
+    margin-top: 2em;
+    width: 17em;
+    height: 2em;
+ }
+
+.login-button{
+    background-color: yellow;
+    margin-top:4em;
+    height: 3em;
+    width: 10em;
+    margin-left: 20%;
 }
 
-.login-menu-sidebar{
-    display:flex;
-}
-
-.login-window{
-    align-items: center;
-    margin-top: 20em;
-}
-   
-/* setting of login in sidebar */
-
-.nav-link{
+.login-close{
     display: flex;
-}
-
-.username-text{
-    align-items: center;
+    margin-top: 10em;
 }
 
 /* setting for main sections */
@@ -162,9 +176,10 @@ nav.open .sidebar {
     background-color: white;
 }
 
-.choose-section{
+.sections-sec1{
     display: inline-flex;
     color: rgb(129, 129, 129);
+    margin-bottom: 1em;
 
 }
 
@@ -188,36 +203,42 @@ nav.open .sidebar {
     font-size: 0.8em;
 }
 
-.info-lines{
+.info-lines-1{
     display: block;
     margin-left: 2em;
     word-spacing: 8em;
+    margin-right: 1em;
     color:white;
 }
 
-.info-line-1{
+.info-line-1-1{
     margin-bottom: 1em;
     background-color: black;
     border-radius: 1em;
+    padding: 0.2em;
 }
 
-.info-line-2{
+.info-line-2-1{
     margin-bottom: 1em;
     background-color: black;
     border-radius: 1em;
+    padding: 0.2em;
 }
 
-.info-line-3{
+.info-line-3-1{
     margin-bottom: 1em;
     background-color: black;
     border-radius: 1em;
+    padding: 0.2em;
 }
 
-.info-line-4{
+.info-line-4-1{
     margin-bottom: 1em;
     background-color: black;
     border-radius: 1em;
+    padding: 0.2em;
 }
+
 /* left-bottom square */
 .section-2{
     grid-column-start: 1;
@@ -228,6 +249,83 @@ nav.open .sidebar {
     border-radius: 1em;
     margin-left: 1em;
     margin-top: 1em ;
+}
+
+.buttons-sec2-list{
+    display: inline-flex;
+    color: rgb(129, 129, 129);
+    font-family: sans-serif;
+    margin: 0.3em;
+}
+
+.button-sec2-seemore{
+    float: right;
+    margin-right: 2em;
+    font-size: 0.7em;
+    border-radius: 0.4em;
+    background-color: white;
+}
+
+.sections-sec2{
+    display: inline-flex;
+    color: rgb(129, 129, 129);
+}
+
+.section-token{
+    margin-left: 3em;
+    font-size: 0.8em;
+}
+
+.section-amount{
+    margin-left: 9.5em;
+    font-size: 0.8em;
+}
+
+.section-total{
+    margin-left: 9em;
+    font-size: 0.8em;
+}
+
+.section-profit{
+    margin-left: 10em;
+    font-size: 0.8em;
+}
+
+.info-lines-2{
+    display: block;
+    margin-left: 2em;
+    word-spacing: 8em;
+    margin-right: 1em;
+    color:white;
+    font-size: 0.2em;
+}
+
+.info-line-1-2{
+    margin-bottom: 1em;
+    background-color: black;
+    border-radius: 1em;
+    padding: 0.2em;
+}
+
+.info-line-2-2{
+    margin-bottom: 1em;
+    background-color: black;
+    border-radius: 1em;
+    padding: 0.2em;
+}
+
+.info-line-3-2{
+    margin-bottom: 1em;
+    background-color: black;
+    border-radius: 1em;
+    padding: 0.2em;
+}
+
+.info-line-4-2{
+    margin-bottom: 1em;
+    background-color: black;
+    border-radius: 1em;
+    padding: 0.2em;
 }
 
 /* right-top square */
