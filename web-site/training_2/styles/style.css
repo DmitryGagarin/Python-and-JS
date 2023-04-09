@@ -1,254 +1,146 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
-
 body{
     background-color: rgb(0, 0, 0);
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-size: 1.25em;
-}
-
-a{
     font-family: sans-serif;
+    overflow: hidden;
 }
 
 li{
     list-style: none;
 }
 
-/* settings for navigation line in the top */
 .navbar{
     display: flex;
     align-items:center;
-    height: 3em;
-    width: 67em;
+    height: 2.5em;
     background-color: rgb(55, 52, 52);
     border-radius: 1em;
     margin: 1em 1em;
 }
 
-/* logo must be there */
-.logo-photo{
-    background-color: white;
-    height: 2em;
-    width: 2em;
-    border-radius: 0.3em;
-    margin-left: 1em;
-}
-
-/* settings of top buttons */
-.list{
+.nav-list{
     display: flex;
     cursor: pointer;
+    flex-direction: row;
+    gap: 1em;
+    color: white;
 }   
 
-.list-item{
-    color: white;
-    font-size: 1em;
-    margin-left: 1em;
-}
-
-.list-item-new a{
-    background-color: rgba(34, 245, 245, 0.834);
-    margin-left: 0.5em;
+.nav-item-new a{
+    background-color: rgba(34, 245, 245, 0.97);
     color:black;
-    padding: 0.2em;
+    padding: 0.1em;
+    cursor: default;
 }
-
-.list-item a:hover{
-    margin-top: 1em;
-}
-
-/* settings for a reg buttons */
-.account-part{
+/* TODO make it more responsive */
+.account{
     display: flex;
-    align-items:center;
-    margin-left: 20em;
-}
-
-.login{
-    margin: 1em;
+    color: white;
+    flex-direction: row;
+    gap: 2em;
+    margin-left: 25em;
     cursor: pointer;
 }
 
-.login a{
-    text-decoration: none;
-    color: white;
-}
-
-.registration{
-    cursor: pointer;
-}
-
-.registration a{
-    text-decoration: none;
-    color: white;
-}
-
-/* setting of sidebar */
 .sidebar{
     position: fixed;
     top: 0;
     right: -100%;    
     height: 100%;
     width: 15em;
-    padding: 20px 0;
     background-color: #fff;
-    transition: all 0.4s ease;
+    transition: all 0.6s ease;
+    z-index: 2;
 }
 
 nav.open .sidebar {
     right: 0;
 }
 
-.sidebar .sidebar-content {
+.sidebar-text{
     display: flex;
-    height: 100%;
+    justify-content: center;
+}
+
+.sidebar-inputs{
+    text-align: center;
+}
+
+.login-username{
+    width: 20em;
+    height: 2em;
+    margin-bottom: 2em;
+}
+
+.login-password{
+    width: 20em;
+    height: 2em;
+}
+
+.sidebar-buttons{
+    display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    padding: 30px 16px;
-}
-
-/* design of sidebar */
-.login-text{
-    transform: translateX(10%);
-    text-decoration: none;
-}
- .login-username{
-    width: 17em;
-    height: 2em;
- }
-
- .login-password{
     margin-top: 2em;
-    width: 17em;
-    height: 2em;
- }
-
-.login-button{
-    background-color: yellow;
-    margin-top:4em;
-    height: 3em;
-    width: 10em;
-    margin-left: 20%;
+    align-items: center;
 }
 
-.login-close{
-    display: flex;
-    margin-top: 10em;
-}
-
-/* setting for main sections */
 .main{
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-auto-rows: 200px; 
 }
 
 /* left-top square */
 .section-1{
-    grid-column-start: 1;
-    grid-column-end: 3;
-    grid-row-start: 1;
-    grid-row-end: 3;
     border-radius: 1em;
     margin-left: 1em;
+    width: 45em;
+    height: 15em;
     background-color: rgb(55, 52, 52);
 }
-
-.buttons-sec1-list{
+/* TODO add space between words */
+.buttons-sec1{
     display: inline-flex;
     color: rgb(129, 129, 129);
     font-family: sans-serif;
-    margin: 0.3em;
 }
 
-.buttons-sec1-list a:hover{
+.buttons-sec1 a:hover{
     color: rgb(255, 255, 255);
     cursor: pointer;
 }
 
-.buttons-sec1-list-deposit{
+.buttons-sec1-deposit{
+    display: flex;
     float: right;
-    margin-right: 2em;
     font-size: 0.7em;
     border-radius: 0.4em;
     background-color: white;
+    margin-right: 2em;
+    align-items: center;
 }
 
-.sections-sec1{
-    display: inline-flex;
-    color: rgb(129, 129, 129);
-    margin-bottom: 1em;
-
+.information{
+    display:flex;
+    color:rgb(129, 129, 129);
+}
+/* TODO добавить черные полоски вдоль */
+.sec-markup{
+    display: flex;
+    justify-content: space-around;
+    margin-left: 5em;
+    margin-top: 0.2em;
 }
 
-.section-token{
-    margin-left: 3em;
-    font-size: 0.8em;
-}
-
-.section-amount{
-    margin-left: 9.5em;
-    font-size: 0.8em;
-}
-
-.section-total{
-    margin-left: 9em;
-    font-size: 0.8em;
-}
-
-.section-profit{
-    margin-left: 10em;
-    font-size: 0.8em;
-}
-
-.info-lines-1{
-    display: block;
-    margin-left: 2em;
-    word-spacing: 8em;
-    margin-right: 1em;
-    color:white;
-}
-
-.info-line-1-1{
-    margin-bottom: 1em;
-    background-color: black;
-    border-radius: 1em;
-    padding: 0.2em;
-}
-
-.info-line-2-1{
-    margin-bottom: 1em;
-    background-color: black;
-    border-radius: 1em;
-    padding: 0.2em;
-}
-
-.info-line-3-1{
-    margin-bottom: 1em;
-    background-color: black;
-    border-radius: 1em;
-    padding: 0.2em;
-}
-
-.info-line-4-1{
-    margin-bottom: 1em;
-    background-color: black;
-    border-radius: 1em;
-    padding: 0.2em;
-}
 
 /* left-bottom square */
 .section-2{
-    grid-column-start: 1;
-    grid-column-end: 3;
-    grid-row-start: 3;
-    grid-row-end: 4;
+    margin: 1em 0 0 1em;
+    width: 45em;
+    height: 16em;
     background-color: rgb(55, 52, 52);
     border-radius: 1em;
-    margin-left: 1em;
-    margin-top: 1em ;
 }
 
 .buttons-sec2-list{
@@ -266,74 +158,23 @@ nav.open .sidebar {
     background-color: white;
 }
 
+.buttons-sec2-list a:hover{
+    color:white;
+    cursor: pointer;
+}
+/* TODO добавить черные полоски вдоль */
 .sections-sec2{
     display: inline-flex;
     color: rgb(129, 129, 129);
 }
 
-.section-token{
-    margin-left: 3em;
-    font-size: 0.8em;
-}
-
-.section-amount{
-    margin-left: 9.5em;
-    font-size: 0.8em;
-}
-
-.section-total{
-    margin-left: 9em;
-    font-size: 0.8em;
-}
-
-.section-profit{
-    margin-left: 10em;
-    font-size: 0.8em;
-}
-
-.info-lines-2{
-    display: block;
-    margin-left: 2em;
-    word-spacing: 8em;
-    margin-right: 1em;
-    color:white;
-    font-size: 0.2em;
-}
-
-.info-line-1-2{
-    margin-bottom: 1em;
-    background-color: black;
-    border-radius: 1em;
-    padding: 0.2em;
-}
-
-.info-line-2-2{
-    margin-bottom: 1em;
-    background-color: black;
-    border-radius: 1em;
-    padding: 0.2em;
-}
-
-.info-line-3-2{
-    margin-bottom: 1em;
-    background-color: black;
-    border-radius: 1em;
-    padding: 0.2em;
-}
-
-.info-line-4-2{
-    margin-bottom: 1em;
-    background-color: black;
-    border-radius: 1em;
-    padding: 0.2em;
-}
-
 /* right-top square */
 .section-3{
-    grid-row-start: 1;
-    grid-row-end: 3;
+    position: fixed;
+    margin: 0 1em 0 48em;
+    width: 22em;
+    height: 20em;
     border-radius: 1em;
-    margin: 0em 1em;
     background-color: rgb(55, 52, 52);
 }
 
@@ -341,17 +182,18 @@ nav.open .sidebar {
     margin-top: 11em;
 }
 
-.line{
-    background-color: rgb(0, 0, 0);
-    height: 0.1em;
-    width: 90%;
+.sec3-header{
+    display: inline;
+    justify-content: left;
+    margin: 5em 0 0 1em;
+    color: white;
 }
 
+.sec3-button{
+    position: fixed;
+    margin-left: 17em;
+}
 .section-4{
-    grid-column-start: 3;
-    grid-column-end: 4;
-    grid-row-start: 3;
-    grid-row-end: 4;
     background-color: rgb(55, 52, 52);
     border-radius: 1em;
     margin: 1em 1em 0 1em;
