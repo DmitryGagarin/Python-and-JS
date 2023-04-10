@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/web-site/training_2/styles/style.css">
-    <link href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css" rel="stylesheet">
     <title>Document</title>
 </head>
 <body>
@@ -13,24 +12,24 @@
         <nav class="navbar">
             <div class="nav-line">
                 <ul class="nav-list">
-                    <li class="nav-item"> <a> Buy </a> </li>
-                    <li class="nav-item"> <a> Markets </a> </li>
-                    <li class="nav-item"> <a> Trade </a> </li>
-                    <li class="nav-item"> <a> Earn </a> </li>
-                    <li class="nav-item"> <a> Finance </a> </li>
-                    <li class="nav-item"> <a> NFT </a> </li>
-                    <li class="nav-item-new"> <a> NEW </a> </li>
+                    <li class="nav-item"><a> Buy </a></li>
+                    <li class="nav-item"><a> Markets </a></li>
+                    <li class="nav-item"><a> Trade </a></li>
+                    <li class="nav-item"><a> Earn </a></li>
+                    <li class="nav-item"><a> Finance </a></li>
+                    <li class="nav-item"><a> NFT </a></li>
+                    <li class="nav-item-new"><a> NEW </a></li>
                 </ul>
             </div>
             <div class="account">
                 <a class="login"> Log In </a>
                 <a class="registration"> Sign up</a>
             </div>
-            <div class="sidebar">
-                <div class="sidebar-content">
-                    <div class="sidebar-menu">
-                        <h3 class="sidebar-text"> Login Menu </h3>
-                        <div class="sidebar-inputs">
+            <div class="sidebar-login">
+                <div class="sidebar-login-content">
+                    <div class="sidebar-login-menu">
+                        <h3 class="sidebar-login-text"> Login Menu </h3>
+                        <div class="sidebar-login-inputs">
                             <input class="login-username" type="text" placeholder="Username"> 
                             <input class="login-password" type="password" placeholder="Password">
                         </div>
@@ -126,21 +125,18 @@
 
         <div class="section-3">
             <a class="sec3-header"> Account balance </a>
-            <a class="sec3-button"> Hide </a>
-            <ul class="wallet-info">
-                <li class="current"> <a> BDK </a></li>
-                <li class="current"> <a> OUG </a></li>
-                <li class="current"> <a> XFZ </a></li>
-                <li class="current"> <a> EFDS </a></li>
-            </ul>
-        </div>
-        
-        <div class="section-4">
-            <div class="advert-place"></div>
+            <button class="sec3-button"> Hide </button>
+            <div class="graph-container">
+                <div class="myChart">   
+                    <canvas id="myChart"></canvas>
+                </div>
+            </div>
         </div>
     </main>
 
     <script src="/web-site/training_2/code/app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="/web-site/training_2/code/pieChart.js"></script>
 
 </body>
 </html>

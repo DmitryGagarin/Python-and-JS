@@ -1,11 +1,18 @@
 const navBar = document.querySelector("nav")
-const openBtns = document.querySelectorAll(".login")
+const loginBtn = document.querySelectorAll(".login")
+const regBtn = document.querySelectorAll(".registration")
 
-
-openBtns.forEach((menuBtn) => {
+loginBtn.forEach(menuBtn => {
   menuBtn.addEventListener("click", () => {
     navBar.classList.toggle("open");
   });
 });
+
+regBtn.forEach(menuBtn => {
+  menuBtn.addEventListener("click", () =>{
+    navBar.classList.toggle("open")
+  })
+})
+
 
 
