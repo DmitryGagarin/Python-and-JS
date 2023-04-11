@@ -8,41 +8,51 @@
     <title>Document</title>
 </head>
 <body>
-    <header>
-        <nav class="navbar">
-            <div class="nav-line">
-                <ul class="nav-list">
-                    <li class="nav-item"><a> Buy </a></li>
-                    <li class="nav-item"><a> Markets </a></li>
-                    <li class="nav-item"><a> Trade </a></li>
-                    <li class="nav-item"><a> Earn </a></li>
-                    <li class="nav-item"><a> Finance </a></li>
-                    <li class="nav-item"><a> NFT </a></li>
-                    <li class="nav-item-new"><a> NEW </a></li>
-                </ul>
-            </div>
-            <div class="account">
-                <a class="login"> Log In </a>
-                <a class="registration"> Sign up</a>
-            </div>
-            <div class="sidebar-login">
-                <div class="sidebar-login-content">
-                    <div class="sidebar-login-menu">
-                        <h3 class="sidebar-login-text"> Login Menu </h3>
-                        <div class="sidebar-login-inputs">
-                            <input class="login-username" type="text" placeholder="Username"> 
-                            <input class="login-password" type="password" placeholder="Password">
-                        </div>
-                        <div class="sidebar-buttons">
-                            <button class="login-button"> Login </button>
-                            <button class="login-close"> Close </button>
-                        </div>
-                    </div>
+    <nav id="Head" class="navbar">        
+        <div class="nav-line">
+            <ul class="nav-list">
+                <li class="nav-item"><a> Buy </a></li>
+                <li class="nav-item"><a> Markets </a></li>
+                <li class="nav-item"><a> Trade </a></li>
+                <li class="nav-item"><a> Earn </a></li>
+                <li class="nav-item"><a> Finance </a></li>
+                <li class="nav-item"><a> NFT </a></li>
+                <li class="nav-item-new"><a> NEW </a></li>
+            </ul>
+        </div>
+        <div class="account">
+            <a data-nav="Link1" class="login"> Log In </a>
+            <a data-nav="Link2" class="registration"> Sign up</a>
+        </div>
+        <div class="AsideWrap Link1">
+            <aside id="Aside" class="Flx Flx1">
+                <h3 class="sidebar-login-text"> Login Menu </h3>
+                <div class="sidebar-login-inputs">
+                    <input class="login-username" type="text" placeholder="Username"> 
+                    <input class="login-password" type="password" placeholder="Password">
                 </div>
-            </div>
-        </nav>
-    </header>
-    
+                <div class="sidebar-buttons">
+                    <button class="login-button"> Login </button>
+                    <button class="login-close"> Close </button>
+                </div>
+            </aside>
+        </div>
+        <div class="AsideWrap Link2">
+            <aside id="Aside" class="Flx Flx1">
+                <h3 class="sidebar-reg-text"> Registration Menu </h3>
+                <div class="sidebar-reg-inputs">
+                    <input class="reg-username" type="text" placeholder="Username"> 
+                    <input class="reg-password" type="password" placeholder="Password">
+                    <input class="reg-password" type="password" placeholder="Repeat Password">
+                </div>
+                <div class="sidebar-buttons">
+                    <button class="reg-button"> Registrate </button>
+                    <button class="reg-close"> Close </button>
+                </div>
+            </aside>
+        </div> 
+    </nav>
+        
     <main>
     <div class="main">
         <div class="section-1">
@@ -134,6 +144,7 @@
         </div>
     </main>
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="/web-site/training_2/code/app.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="/web-site/training_2/code/pieChart.js"></script>
