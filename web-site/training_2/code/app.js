@@ -4,7 +4,21 @@ $(function sideNav() {
     $('.' + link).toggleClass('Slide');
   });
   $('.AsideWrap').on('click', function () {
+    $('.Slide').toggleClass('Slide', true);
+  })
+});
+
+$(function() {
+  $('#closeSidebar-login').on('click', function() {
     $('.Slide').toggleClass('Slide');
   });
 });
 
+$(function() {
+  $('#closeSidebar-reg').on('click', function() {
+    $('.Slide').toggleClass('Slide');
+  });
+});
+
+
+  

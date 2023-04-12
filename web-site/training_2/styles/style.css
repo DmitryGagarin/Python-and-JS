@@ -87,15 +87,11 @@ li{
 }
   
 .Slide #Aside{
-    right: 0 !important;
+    right: -1.4em !important;
 }
   
 .Flx {
     display: flex;
-}
-  
-.Flx1 {
-    flex: 1 1 0%;
 }
 
 .sidebar-login-text{
@@ -118,12 +114,63 @@ li{
     height: 2em;
 }
 
+.reg-username{
+    width: 20em;
+    height: 2em;
+    margin-bottom: 2em;
+}
+
+.reg-password{
+    width: 20em;
+    height: 2em;
+    margin-bottom: 2em;
+}
 
 .sidebar-buttons{
     display: flex;
     flex-direction: column;
-    margin-top: 2em;
+    margin-top: 1em;
     align-items: center;
+}
+
+.login-button{
+    width: 20em;
+    height: 2em;
+    border-radius: 1em;
+}
+
+.reg-button{
+    width: 20em;
+    height: 2em;
+    border-radius: 1em;
+}
+
+.login-button:hover{
+    background-color: rgb(65, 65, 65);
+    color: white
+}
+
+.reg-button:hover{
+    background-color: rgb(65, 65, 65);
+    color: white
+}
+
+#closeSidebar-login{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 2em;
+    width: 20em;
+    margin-top: 1em; 
+}
+
+#closeSidebar-reg{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 2em;
+    width: 20em;
+    margin-top: 1em; 
 }
 
 .main{
