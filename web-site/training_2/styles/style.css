@@ -159,18 +159,20 @@ li{
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 2em;
-    width: 20em;
-    margin-top: 1em; 
+    height: 1em;
+    width: 14em;
+    margin-top: 4em; 
+    font-size: 0.8em;
 }
 
 #closeSidebar-reg{
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 2em;
-    width: 20em;
-    margin-top: 1em; 
+    height: 1em;
+    width: 14em;
+    margin-top: 4em; 
+    font-size: 0.8em;
 }
 
 .main{
