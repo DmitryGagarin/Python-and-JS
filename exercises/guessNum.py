@@ -4,7 +4,7 @@ import random
 num = random.randrange(101)
 
 print("I have a number and you have to guess it")
-print("Make your anticipation by inserting a number from 1 to 100")
+print("Make your anticipation by inputing a number from 1 to 100")
 
 less = "My number is less"
 more = "My number is more"
@@ -12,20 +12,21 @@ equals = "You win!"
 
 def guess():
     attempt = 0
-    user_num = int(input())
-    while user_win <= 0:
-        if user_num < num:
+    userNum = int(input())
+    userWin = 0
+    while userWin <= 0:
+        if userNum < num:
             print(more)
             attempt += 1 
             guess()
             break
-        if user_num > num:
+        if userNum > num:
             print(less) 
             attempt += 1
             guess()
             break
-        if user_num == num:
+        if userNum == num:
             print(equals)
-            user_win += 1
+            userWin += 1 
         
 guess()
