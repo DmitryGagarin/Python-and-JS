@@ -1,8 +1,17 @@
 from django.http import Http404, HttpResponse, HttpResponseNotFound
 from django.shortcuts import redirect, render
+from .models import * 
 
-def index(request): #Http request
-    return HttpResponse("<h1> Main Page </h1>")
+
+menu = ["About", "Add article", "Feedback", "Login"]
+
+
+def index(request): 
+    posts = Women.objects.all()
+    return render(request, 'women/index.html', {'posts': posts, 'menu': menu, 'title': 'Main Page'})
+
+def about(request):
+    return render(request, 'women/about.html', {'menu': menu, 'title': 'About Page'})
 
 def categories(request, catid):   
     if(request.GET):
