@@ -24,13 +24,13 @@ def about(request):
     return render(request, 'women/about.html', {'menu': menu, 'title': 'About Page'})
 
 def addpage(request):
-    return HttpResponse('addpage page')
+    return render(request, 'women/addpage.html', {'menu': menu, 'title': 'Addpage'})
 
 def feedback(request):
-    return HttpResponse('feedback page')
+   return render(request, 'women/feedback.html', {'menu': menu, 'title': 'Feedback Page'})
 
 def login(request):
-    return HttpResponse('login page')
+    return render(request, 'women/login.html', {'menu': menu, 'title': 'Login'})
 
 def show_post(request, post_id):
     return HttpResponse(f'Article with id {post_id}')
