@@ -3,30 +3,36 @@ from django.shortcuts import redirect, render
 from .models import * 
 
 
-menu = ["About", "Add article", "Feedback", "Login"]
+menu = [{'title': 'About', 'url_name': 'about'},
+{'title': 'Add Article', 'url_name': 'addpage'},   
+{'title': 'Feedback', 'url_name': 'feedback'},
+{'title': 'Login', 'url_name': 'login'}   
+]
 
 
 def index(request): 
     posts = Women.objects.all()
-    return render(request, 'women/index.html', {'posts': posts, 'menu': menu, 'title': 'Main Page'})
+    context = {
+        'posts': posts,
+        'menu': menu,
+        'title': 'Main Page'
+    }
+    return render(request, 'women/index.html', context=context)
 
 def about(request):
     return render(request, 'women/about.html', {'menu': menu, 'title': 'About Page'})
 
-def categories(request, catid):   
-    if(request.GET):
-        print(request.GET)
-    else:
-        print("get quary is empty")
-    return HttpResponse(f"<h1> Categories Page </h1> <p> {catid}</p>")
+def addpage(request):
+    return HttpResponse('addpage page')
 
-def archive(request, year):
-    if int(year) > 2020:
-        return redirect('home', permanent=True)
-    return HttpResponse(f"<h1> Archives Page </h1> <p> {year}</p>")
+def feedback(request):
+    return HttpResponse('feedback page')
 
-def pageNotFound(request, exception):
-    return HttpResponseNotFound(f"<h1> Page Not Found </h1>")
+def login(request):
+    return HttpResponse('login page')
 
+def show_post(request, post_id):
+    return HttpResponse(f'Article with id {post_id}')
+    
 
     
