@@ -8,7 +8,8 @@ from .models import *
 menu = [{'title': 'About', 'url_name': 'about'},
 {'title': 'Add Article', 'url_name': 'addpage'},   
 {'title': 'Feedback', 'url_name': 'feedback'},
-{'title': 'Login', 'url_name': 'login'}   
+{'title': 'Registration', 'url_name':'registration'},
+{'title': 'Login', 'url_name': 'login'},
 ]
 
 
@@ -41,6 +42,9 @@ def addpage(request):
 
 def feedback(request):
    return render(request, 'women/feedback.html', {'menu': menu, 'title': 'Feedback Page'})
+
+def registration(request):
+    return render(request, 'women/registration.html', {'menu': menu, 'title': 'Registration'})
 
 def login(request):
     return render(request, 'women/login.html', {'menu': menu, 'title': 'Login'})
