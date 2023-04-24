@@ -32,20 +32,20 @@ def feedback(request):
 def login(request):
     return render(request, 'women/login.html', {'menu': menu, 'title': 'Login'})
 
-def show_post(request, post_id):
-    post = get_object_or_404(Women, pk=post_id)
+def show_post(request, post_slug):
+    post = get_object_or_404(Women, slug=post_slug)
     
     context = {
         'post': post,
         'menu': menu,
         'title': post.title,
-        'cat_selected': post.cat_id,
+        'cat_selected': 0, 
     }
     
     return render(request, 'women/post.html', context=context)
         
-def show_category(request, cat_id):
-    posts = Women.objects.filter(cat_id=cat_id)
+def show_category(request, cat_slug):
+    posts = Women.objects.filter(cat__slug=cat_slug)
     
     if len(posts) == 0:
         raise Http404('Page not found')
@@ -53,7 +53,7 @@ def show_category(request, cat_id):
         'posts': posts,
         'menu': menu,
         'title': 'Show by Categories',
-        'cat_selected': cat_id,
+        'cat_selected': cat_slug,
     }
     return render(request, 'women/index.html', context=context)
 
