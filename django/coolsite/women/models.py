@@ -4,7 +4,7 @@ from django.urls import reverse
 class Women(models.Model):
     title = models.CharField(max_length=255)
     slug = models.SlugField(max_length=255, unique=True, db_index = True, verbose_name="URL")
-    content = models.TextField(blank=True)
+    content = models.TextField(blank=False)
     photo = models.ImageField(upload_to='photos/%Y/%m/%d/')
     time_created = models.DateTimeField(auto_now_add=True)
     time_updated = models.DateTimeField(auto_now=True)
