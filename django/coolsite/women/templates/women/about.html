@@ -3,18 +3,6 @@
 {% block content %}
 <h1>{{title}}</h1>
 
-{% for contant in page_obj %}
-    <p> {{ contant }} </p>
-{% endfor %}
-
-<nav>
-    <ul>
-        {% for p in page_obj.paginator.page_range %}
-            <li>
-                <a href="?page={{ p }}"> {{p}}</a>
-            </li>
-        {% endfor %}
-    </ul>
-</nav>
+<p> About Page </p>
 
 {% endblock %}

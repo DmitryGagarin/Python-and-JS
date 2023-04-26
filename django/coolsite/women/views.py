@@ -10,7 +10,6 @@ from .models import *
 from .utils import *
 
 class WomenHome(DataMixin, ListView):
-    paginate_by = 3
     model = Women
     template_name = 'women/index.html'
     context_object_name = 'posts'
@@ -77,5 +76,6 @@ class WomenCategory(DataMixin, ListView):
         c_def = self.get_user_context(title = 'Category - ' + str(context['posts'][0].cat),
                                       cat_selected = context['posts'][0].cat_id)        
         return dict(list(context.items()) + list(c_def.items()))
+    
         
     
