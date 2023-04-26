@@ -25,11 +25,11 @@
 				{% for m in menu %}
 					{% if not forloop.last %}
 						<li>
-							<a href="{% url m.url_name%}  ">{{m.title}}</a>
+							<a href="{% url m.url_name %}">{{m.title}}</a>
 						</li>
 					{% else %}
 						<li class="last">
-							<a href="{% url m.url_name%}  ">{{m.title}}</a>
+							<a href="{% url m.url_name %}">{{m.title}}</a>
 						</li>
 					{% endif %}
 				{% endfor %}
@@ -52,7 +52,13 @@
 				<li> <a href="{% url 'home' %}">All Categories</a></li>		
 			{% endif %}
 
-			{% show_categories cat_selected=cat_selected %}
+			{% for c in cats %}
+				{% if c.pk == cat_selected %}
+					<li class="selected">{{c.name}}</li>
+				{% else %}
+					<li><a href="{{ c.get_absolute_url }}">{{c.name}}</a></li>
+				{% endif %}
+			{% endfor %} 
 
 			<li class="share">
 			<p>Our Channel</p>
