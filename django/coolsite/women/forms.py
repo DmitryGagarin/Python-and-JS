@@ -1,7 +1,9 @@
 from django.core.exceptions import ValidationError
 from django import forms
 from .models import *
-
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.forms import AuthenticationForm
+from django.contrib.auth.models import User
 class AddPostForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -20,3 +22,19 @@ class AddPostForm(forms.ModelForm):
         if len(title) > 150:
             raise ValidationError('Title is too long')
         return  title
+    
+class RegisterUserForm(UserCreationForm):
+    username = forms.CharField(help_text='')
+    password1 = forms.CharField(help_text='')
+    password2 = forms.CharField(help_text='')
+    email = forms.EmailField(help_text='')
+
+    class Meta:
+        model = User
+        fields = ('username', 'password1', 'password2', 'email')
+        
+class LoginUserForm(AuthenticationForm):
+    username = forms.CharField(help_text='')
+    password = forms.CharField(help_text='')
+    
+    
