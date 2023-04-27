@@ -1,8 +1,15 @@
 This task consists of 3 stages:
-1) Training 1 - just a code from somebody's video. Crucial for first experience. None line code was written myself, it was just an attempt.
-There's only frontend, no backend at all. Used HTML, CSS, JS, JSON
+1) Training 1 - Just a code from somebody's video, but i did not just copy it, i was trying to realise what he was doing. Crucial for first experience.
+None line code was written myself, it was just an attempt.
+There's only frontend, no backend at all. Used HTML, CSS, JS, JSON. I used this project to understand what JavaScript is, its basics.
+Also need to said that I made a mistake somewhere so the functional of the site is not as completely as it was in that video.
 
-2) Training 2 - partly the same idea as previous, but the realization of code is a work of mine. Tried some framework features. There's a small part of backend such as 
-registration, login, etc
+2) Training 2 - I took a random website design, made it up (сверстал), add some features (pie chart and sidebar). The main purpose of this
+projects is to try myself in HTML and CSS mostly. Also used JQuery library to make a sidebar. Decided not to make a registration because 
+to make it real, I had to recode all the project. 
+
+3) Training 3 - The idea of this projects is the same with Training 1. This project was done with the use of DJango, HTML, CSS. I was just wathing a video
+and soaking up the main ideas of this framework. This project containg: templates affected by models and views, database, login and registration forms,
+opportunity to add content also.
 
 P.S. Wish me a luck!
