@@ -1,16 +1,21 @@
 // basic settings 
+// TODO more levels
+// TODO random money spawn
+// TODO decorations
+// TODO use the latest version
+kaboom()
 kaboom({
     global: true,
     fullscreen: true,
     scale: 2, 
     debug: true,
-    clearColor: [1,1,1,1], // background colour
+    clearColor: [0.5,0.5,1,1], // background colour
+    font: "sans-serif",
 })
 
 const move_speed = 120 
 const jump_force = 270
-let win = false
-let fail = false
+const fall_death = 400
 
 // game models
 loadRoot('https://i.imgur.com/')
@@ -23,21 +28,21 @@ scene('game', ({score}) => {
     
     // how map will be looked like
     const map = [
-        '                                     ',
-        '    =================================',
-        '=                                     ',
-        '=                                     ',
-        '=                                     ',
-        '=          $                          ',
-        '=               $                     ',
-        '=          ==                         ',
-        '=            =                        ',
-        '=       $                  $          ',
-        '=             ===               $     ',
-        '=                      $        =     ',
-        '=                $  =        =        ',
-        '=                  ==      =          ',
-        ' ====  ===============    ===         ',
+        '                                       ',
+        '    ===================================',
+        '=                                     =',
+        '=                                     =',
+        '=                                     =',
+        '=          $                          =',
+        '=               $                     =',
+        '=          ==        $                =',
+        '=            =       =                =',
+        '=       $                 $           =',
+        '=             ===               $     =',
+        '=                      $        =     =',
+        '=                $  =        =        =',
+        '=    $              ==      =         =',
+        '=====    =============    ===         =',
     ]
 
     // changing signs to its sprites
@@ -54,20 +59,18 @@ scene('game', ({score}) => {
     const scoreLabel = add([
         text(score),
         color(0,0,0),
-        pos(40,15),
+        pos(40,150),
         layer('ui'),
         {
             value: score,
         }
     ])
-
-    add([text('level' + 'test', pos(4,6))])
-
+    
     // settings how player wiil be looked like
     const player = add([
         sprite('punk'), 
         solid(),
-        pos(60,0), // start position
+        pos(50,0), // start position
         body(),
         origin('bot')
     ])
@@ -76,26 +79,48 @@ scene('game', ({score}) => {
         destroy(c)
         scoreLabel.value ++
         scoreLabel.text = scoreLabel.value
+        if (scoreLabel.value >= 9) {
+            go('win', ({ score: 9 }))
+        }
     })
 
     player.action(() => {
-        if (player.pos.y < 10) {
-          player.pos.x = 60
-          player.pos.y = 0
+        camPos(player.pos)
+        if (player.pos.y >= fall_death) {
+          go('lose', { score: scoreLabel.value})
         }
-      })
+        scoreLabel.pos.x = player.pos.x - 20
+        scoreLabel.pos.y = player.pos.y - 30
+    })
 
     keyDown('left', () => {
         player.move(-move_speed, 0)
     })
+    
     keyDown('right', () => {
         player.move(move_speed, 0)
     })
+    
     keyPress('space', () => {
         if (player.grounded()) {
             player.jump(jump_force)
         }
     })
+
+    scene('win', ({ score }) => {
+        add([text("You won with the score " + score), origin('center'), pos(width()/2, height()/2)])
+        wait(3, () => {
+            go('game', {score: 0})
+        })
+    })
+
+    scene('lose', ({ score }) => {
+        add([text("Your score is " + score), origin('center'), pos(width()/2, height()/2)])
+        wait(3, () => {
+            go('game', {score: 0})
+        })
+    })
 })
+
 
 start('game', {score:0})
