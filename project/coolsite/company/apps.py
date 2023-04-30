@@ -1,6 +1,6 @@
 from django.apps import AppConfig
 
 
-class TrucksConfig(AppConfig):
+class SiteConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'trucks'
+    name = 'site_config'

@@ -7,3 +7,4 @@ class Users(models.Model):
     phone_number = models.CharField(max_length=15)
     time_created = models.DateTimeField(auto_now_add=True)
     
+    
