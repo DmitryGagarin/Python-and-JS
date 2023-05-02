@@ -1,0 +1,31 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+.input{
+    margin-top: 10em;
+    margin-left: 50em;
+    width: 30em;
+    height: 5em;
+    border: 0.5em solid red;
+    font: 2em;
+}
+
+.button{
+    margin-top: 15em;
+    width:5em;
+    height:5em;
+    border: 0.5em solid red;
+}
+
+.out{
+    margin-top: 4%;
+    margin-left: 35%;
+    width: 30em;
+    height: 10em;
+    border: 0.5em solid red;
+    text-align: center;
+}
+
+

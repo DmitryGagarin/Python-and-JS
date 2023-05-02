@@ -109,14 +109,14 @@ scene('game', ({score}) => {
 
     scene('win', ({ score }) => {
         add([text("You won with the score " + score), origin('center'), pos(width()/2, height()/2)])
-        wait(3, () => {
+        wait(2, () => {
             go('game', {score: 0})
         })
     })
 
     scene('lose', ({ score }) => {
         add([text("Your score is " + score), origin('center'), pos(width()/2, height()/2)])
-        wait(3, () => {
+        wait(2, () => {
             go('game', {score: 0})
         })
     })
