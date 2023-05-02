@@ -1,14 +1,21 @@
 <!DOCTYPE html>
-<html lang='en'>
+<html lang="ru">
 <head>
-    <meta charset = 'utf-8'>
-    <title> GitHub Parser </title>
-    <link rel='stylesheet' href='style.css'>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Github Parser</title>
 </head>
 <body>
-    <input text="text" class="input" placeholder="Insert a profile name">
-    <button type='submit' class="button"> <a> Push me </a> </button>
-    <div class="out"><div> Your Link Is: </div>https://github.com/</div> 
-    <script src='parser.js'></script>
+    <div class="container">
+        <div class="main">
+            <h1>Github search profiles</h1>
+            <form class="search"> 
+                <input class='search-input' name='name'></input>
+                <button class='search-button' type='submit'>Search</button>
+            </form>
+        </div>
+    </div>
+    <script src="parser.js"></script>
 </body>
 </html>
