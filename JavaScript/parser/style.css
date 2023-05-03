@@ -1,65 +1,83 @@
 * {
-    margin: 0px;
-    padding: 0px;
-    box-sizing: border-box;
-  }
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
   
-  body {
-    background-color: #f1f5f8;
-    font-family: "Open Sans", sans-serif;
-  }
+body {
+  background-color: #f1f5f8;
+  font-family: "Open Sans", sans-serif;
+}
+
+a{
+  text-decoration: none;
+}
   
-  .container {
-    max-width: 1200px;
-    margin: 0 auto;
-  }
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
   
-  .main {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-  }
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
   
-  .search-image {
-    width: 200px;
-    height: 200px;
-    display: block;
-    margin: 0 auto;
-  }
+.search-image {
+  width: 200px;
+  height: 200px;
+  display: block;
+  margin: 0 auto;
+}
   
-  .search-text {
-    padding: 4px;
-  }
+.search-text {
+  padding: 4px;
+}
   
-  .search-input {
-    padding: 8px;
-    margin: 8px;
-  }
+.search-input {
+  padding: 8px;
+  margin: 8px;
+}
   
-  .search-button {
-    padding: 8px;
-    background-color: blueviolet;
-    color: #f1f5f8;
-    cursor: pointer;
-    border: none;
-  }
+.search-button {
+  padding: 8px;
+  background-color: blueviolet;
+  color: #f1f5f8;
+  cursor: pointer;
+  border: none;
+}
+
+.delete-button {
+  padding: 8px;
+  background-color: rgb(237, 68, 68);
+  border: none;
+  color: #f1f5f8;
+  border-radius: 2px;
+}
   
-  .profile {
-    border: 1px solid white;
-    border-radius: 20px;
-    padding: 20px;
-    background-color: white;
-    width: 300px;
-    box-shadow: 8px 8px 2px 1px rgb(0, 0, 255, .2);
-  }
+.profile {
+  border: 1px solid white;
+  border-radius: 20px;
+  padding: 20px;
+  background-color: white;
+  width: 600px;
+  box-shadow: 8px 8px 2px 1px rgb(0, 0, 255, .2);
+}
   
-  .delete-button {
-    padding: 8px;
-    background-color: rgb(237, 68, 68);
-    border: none;
-    color: #f1f5f8;
-    border-radius: 2px;
-  
-  }
+.card-label{
+  color:red;
+}
+
+.repository-name{
+  text-decoration: underline;
+  color:rgb(101, 205, 240);
+}
+
+.repository-link{
+  color:blueviolet;
+  text-decoration: none;
+  font-style: italic;
+}
