@@ -1,0 +1,35 @@
+html{
+    margin: 0;
+    padding: 0;
+}
+
+button{
+    background-color: black;
+    color: white;
+    width: 8em;
+    height: 3em;
+
+}
+
+.top-text{
+    position: absolute;
+    top: 2em;
+    left: 20em;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.white-box{
+    top: 8em;
+    left: 25em;
+    position: absolute;
+    width: 40em;
+    height: 30em;
+    border: 2px solid black;
+    z-index: 2;
+}
+
+.add-button{
+    position: absolute;
+    top: 1em;
+    left: 49em;
+}
