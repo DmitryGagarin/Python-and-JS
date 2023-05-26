@@ -1,0 +1,13 @@
+html{
+    margin: 0;
+    padding: 0;
+}
+
+.top-text{
+    text-align: center;
+}
+
+.left-box, .right-box{
+    margin-bottom: 10px;
+    text-align: center;
+}
