@@ -17,21 +17,21 @@ h1{
 }
 
 img{
-    width: 450px;
-    height: 450px;
+    width: 560px;
+    height: 560px;
     margin: 5px;
     box-shadow: 15px 15px 20px grey;
     background-color: white;
+    object-fit: cover;
 }
 
-button{
-    display: block;
-    margin: 10px auto;
+.button-cat, .button-dog{
+    display: inline;
+    margin: 10px 180px auto;
     text-align: center;
     width: 200px;
     height: 50px;
     font-family: fantasy;
     font-size: larger;
     background-color: rgba(177, 177, 177, 0.445);
-
 }

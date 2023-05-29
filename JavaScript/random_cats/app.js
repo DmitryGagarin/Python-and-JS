@@ -1,16 +1,24 @@
-function fetchCatImage(){
-    let image = document.querySelector('.img')
+function catButtonClick(){
+    const buttonCat = document.querySelector('.button-cat')
+    buttonCat.addEventListener('click', () => {
+    const catImage = document.querySelector('.cat-img')
     fetch("https://api.thecatapi.com/v1/images/search")
     .then(resp => resp.json())
-    .then(json => image.src = json[0].url)
+    .then(json => catImage.src = json[0].url)
+    })
 }
 
-function btnClick(){
-    let button = document.querySelector('.button')
-    button.addEventListener('click', fetchCatImage)
+function dogButtonClick(){
+    const buttonDog = document.querySelector('.button-dog')
+    buttonDog.addEventListener('click', () => {
+    const dogImage = document.querySelector('.dog-img')
+    fetch("https://dog.ceo/api/breeds/image/random ")
+    .then(resp => resp.json())
+    .then(json => dogImage.src = json.message)
+    })
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    fetchCatImage()
-    btnClick()
+    catButtonClick()
+    dogButtonClick()
 })
