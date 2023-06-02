@@ -3,7 +3,7 @@
 // TODO random money spawn
 // TODO decorations
 // TODO use the latest version
-kaboom()
+
 kaboom({
     global: true,
     fullscreen: true,
@@ -68,7 +68,7 @@ scene('game', ({score}) => {
     
     // settings how player wiil be looked like
     const player = add([
-        sprite('punk'), 
+        sprite('punk'),
         solid(),
         pos(50,0), // start position
         body(),
@@ -123,4 +123,4 @@ scene('game', ({score}) => {
 })
 
 
-start('game', {score:0})
+go("game", {score:0})
