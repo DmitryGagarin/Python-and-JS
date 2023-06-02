@@ -4,6 +4,8 @@
 // TODO decorations
 // TODO use the latest version
 
+import kaboom from "https://unpkg.com/kaboom@3000.0.1/dist/kaboom.mjs";
+
 kaboom({
     global: true,
     fullscreen: true,
@@ -24,7 +26,7 @@ loadSprite("brick", "LigGnxF.png")
 loadSprite("money", "lUW00lK.png")
 
 scene('game', ({score}) => {
-    layers(['background', 'object', 'ui'], 'object')
+    const layers = (['background', 'object', 'ui'], 'object')
     
     // how map will be looked like
     const map = [
@@ -49,7 +51,7 @@ scene('game', ({score}) => {
     const levelConfig = {
         width: 20,
         height: 20,
-        '=': [sprite('brick'), solid()],
+        '=': [sprite('brick'), solid],
         '$': [sprite('money'), 'money']
     }
 
