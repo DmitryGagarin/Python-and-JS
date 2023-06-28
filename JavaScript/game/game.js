@@ -51,7 +51,8 @@ scene('game', ({score}) => {
     const levelConfig = {
         width: 20,
         height: 20,
-        '=': [sprite('brick'), solid],
+        '=': [sprite('brick'),
+        body({isStatic: true})],
         '$': [sprite('money'), 'money']
     }
 
@@ -71,7 +72,7 @@ scene('game', ({score}) => {
     // settings how player wiil be looked like
     const player = add([
         sprite('punk'),
-        solid(),
+        body({isStatic: true}),
         pos(50,0), // start position
         body(),
         origin('bot')
